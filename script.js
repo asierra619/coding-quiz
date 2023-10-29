@@ -3,9 +3,19 @@ var index = 0
 
 var questions = [
     {
+        question: "Which of the following is not a JavaScript Alert Pop-up?",
+        choices: ["Alert","Confirm","Question","Prompt"],
+        answer: "Question"
+    },
+    {
+        question: "?",
+        choices: ["a","b","c","d"],
+        answer: "b"
+    },
+    {
         question: "Question?",
         choices: ["a","b","c","d"],
-        answer: "d"
+        answer: "c"
     },
     {
         question: "Question?",
@@ -13,14 +23,9 @@ var questions = [
         answer: "d"
     },
     {
-        question: "Question?",
-        choices: ["a","b","c","d"],
-        answer: "d"
-    },
-    {
-        question: "Question?",
-        choices: ["a","b","c","d"],
-        answer: "d"
+        question: "What is the purpose of JavaScript?",
+        choices: ["Design the layout of web pages","Program web pages' behavior","Define the content on a web page","Store, manipulate, and retrieve data from databases"],
+        answer: "Program web pages' behavior"
     },
 ]
 
