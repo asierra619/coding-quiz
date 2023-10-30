@@ -33,7 +33,22 @@ function renderQuestion() {
     var questionEl=document.createElement("h4")
     questionEl.textContent=questions[index].question
     document.querySelector('#quiz-container').append(questionEl)
-    // use for loop for answer choices - ask bcs
+    // use for loop for answer choices - ask bcs (Jerromy - BIG HELP)
+    for (var i = 0; i <questions[index].choices.length; i++) {
+        var btn = document.createElement("button");
+        btn.textContent = questions[index].choices[i];
+        questionEl.append(btn);
+
+        btn.addEventListener('click', function() {
+            var selectedAnswer = event.target.textContent;
+
+            if (selectedAnswer !== choices[index].answer) {
+                // remove time from clock as penalty for wrong answer
+                
+            }
+            renderQuestion()
+        });
+    }
 }
 
 function startQuiz() {
