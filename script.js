@@ -1,6 +1,7 @@
 var welcomeScreen = document.querySelector('#welcome-screen');
 var index = 0
-
+var secLeft = 100
+var timerEl = document.querySelector('#time-left');
 var questions = [
     {
         question: "Which of the following is not a JavaScript Alert Pop-up?",
@@ -29,6 +30,17 @@ var questions = [
     },
 ]
 
+function startTimer () {
+    var timerInterval = setInterval(function() {
+        secLeft--;
+        timerEl.textContent = "Current Score = " + secLeft;
+
+        if (secLeft === 0) {
+            clearInterval(timerInterval);
+        }
+    }, 1000);
+}
+
 function renderQuestion() {
     var questionEl=document.createElement("h4")
     questionEl.textContent=questions[index].question
@@ -53,6 +65,7 @@ function renderQuestion() {
 
 function startQuiz() {
     welcomeScreen.style.display="none"
+    startTimer()
     renderQuestion()
 }
 
