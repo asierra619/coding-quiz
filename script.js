@@ -64,14 +64,13 @@ function renderQuestion() {
             console.log(selectedAnswer, correctAnswer);
             if (selectedAnswer !== correctAnswer) {
                 // remove time from clock as penalty for wrong answer
-                timePenalty()
-            } else { index ++ 
-            questionEl.textContent = '';
+                timePenalty();
+            } else { index ++ ;
+                questionEl.textContent = '';
             // check whether our index is greater than or equal to the length of questions
             // if yes, return and dont call renderQuestion() again
             renderQuestion();
             }
-
         });
     }
 }
