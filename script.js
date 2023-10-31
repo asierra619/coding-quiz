@@ -2,9 +2,10 @@ var welcomeScreen = document.querySelector('#welcome-screen');
 var index = 0
 var secLeft = 100
 var timerEl = document.querySelector('#time-left');
+var questionEl = document.querySelector('#quiz-container');
 
 function timePenalty() {
-    secLeft - 15
+    secLeft = secLeft - 15;
 };
 
 var questions = [
@@ -34,7 +35,6 @@ var questions = [
         answer: "Program web pages' behavior"
     },
 ]
-var correctAnswer = choices[index].answer;
 
 function startTimer () {
     var timerInterval = setInterval(function() {
@@ -48,6 +48,7 @@ function startTimer () {
 }
 
 function renderQuestion() {
+    var correctAnswer = questions[index].answer;
     var questionEl=document.createElement("h4")
     questionEl.textContent=questions[index].question
     document.querySelector('#quiz-container').append(questionEl)
@@ -58,12 +59,19 @@ function renderQuestion() {
         questionEl.append(btn);
 
         btn.addEventListener('click', function() {
+            console.log("clicked");
             var selectedAnswer = event.target.textContent;
-
+            console.log(selectedAnswer, correctAnswer);
             if (selectedAnswer !== correctAnswer) {
                 // remove time from clock as penalty for wrong answer
                 timePenalty()
+            } else { index ++ 
+            questionEl.textContent = '';
+            // check whether our index is greater than or equal to the length of questions
+            // if yes, return and dont call renderQuestion() again
+            renderQuestion();
             }
+
         });
     }
 }
