@@ -2,6 +2,11 @@ var welcomeScreen = document.querySelector('#welcome-screen');
 var index = 0
 var secLeft = 100
 var timerEl = document.querySelector('#time-left');
+
+function timePenalty() {
+    secLeft - 15
+};
+
 var questions = [
     {
         question: "Which of the following is not a JavaScript Alert Pop-up?",
@@ -56,9 +61,8 @@ function renderQuestion() {
 
             if (selectedAnswer !== choices[index].answer) {
                 // remove time from clock as penalty for wrong answer
-                
+                timePenalty()
             }
-            renderQuestion()
         });
     }
 }
