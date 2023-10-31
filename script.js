@@ -34,6 +34,7 @@ var questions = [
         answer: "Program web pages' behavior"
     },
 ]
+var correctAnswer = choices[index].answer;
 
 function startTimer () {
     var timerInterval = setInterval(function() {
@@ -59,7 +60,7 @@ function renderQuestion() {
         btn.addEventListener('click', function() {
             var selectedAnswer = event.target.textContent;
 
-            if (selectedAnswer !== choices[index].answer) {
+            if (selectedAnswer !== correctAnswer) {
                 // remove time from clock as penalty for wrong answer
                 timePenalty()
             }

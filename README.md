@@ -15,4 +15,4 @@ WHEN the game is over
 THEN I can save my initials and score
 
 Calendly Tutor - Scott Everett
-Ask BCS - Jerromy
+Ask BCS - Jerromy, Insha
