@@ -15,19 +15,19 @@ var questions = [
         answer: "Question"
     },
     {
-        question: "?",
-        choices: ["a","b","c","d"],
-        answer: "b"
+        question: "Where does Append add a value/string?",
+        choices: ["At the start of an array","At the end of an array","In a new array","On the next line of code"],
+        answer: "At the end of an array"
     },
     {
-        question: "Question?",
-        choices: ["a","b","c","d"],
-        answer: "c"
+        question: "In what measurement of time is setInterval() called at?",
+        choices: ["Milliseconds","Seconds","Minutes","Decades"],
+        answer: "Milliseconds"
     },
     {
-        question: "Question?",
-        choices: ["a","b","c","d"],
-        answer: "d"
+        question: "After git add -A, you must git _____ -m <>.",
+        choices: ["comet","comment","commit","cement"],
+        answer: "commit"
     },
     {
         question: "What is the purpose of JavaScript?",
@@ -68,6 +68,9 @@ function renderQuestion() {
             } else { index ++ ;
                 questionEl.textContent = '';
             // check whether our index is greater than or equal to the length of questions
+            if (index >= questions.length) {
+                alert("Completed! Your score is " + secLeft);
+            }
             // if yes, return and dont call renderQuestion() again
             renderQuestion();
             }
